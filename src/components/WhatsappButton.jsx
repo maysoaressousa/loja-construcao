@@ -1,7 +1,7 @@
 import { FaWhatsapp } from 'react-icons/fa';
 
 export default function WhatsappButton() {
-  const numeroTelefone = "5585999999999"; // Substitua pelo número real da loja com DDD
+  const numeroTelefone = "5585987133705"; // Substitua pelo número real da loja com DDD
   const mensagemPadrao = "Olá! Estou navegando no site de vocês e gostaria de fazer uma cotação.";
   const url = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent(mensagemPadrao)}`;
 
