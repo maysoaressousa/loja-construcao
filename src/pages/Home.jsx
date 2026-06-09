@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaStore, FaMotorcycle, FaInstagram, FaArrowRight } from 'react-icons/fa';
+import Marketplaces from './Marketplaces';
 
 export default function Home() {
-  const numeroTelefone = "5585999999999";
+  const numeroTelefone = "5585987133705"; // Substitua pelo número real da loja
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
   const instagramPosts = [
@@ -80,6 +81,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 2. ENCAIXE A NOVA SEÇÃO AQUI */}
+      <Marketplaces />
 
       {/* INSTAGRAM: Grid inteligente 2x2 no mobile e 4x1 no PC */}
       <section className="py-12 px-4 border-t border-slate-100 bg-slate-50/50 md:py-16 md:px-8">
