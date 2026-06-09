@@ -26,7 +26,7 @@ export default function Header() {
           {/* Logo da Loja */}
           <Link to="/" className="flex items-center">
             <span className="text-2xl font-black tracking-tight text-slate-800">
-              R3<span className="text-laranja-principal">CONSTRUÇÕES</span>
+              R3 <span className="text-laranja-principal">CONSTRUÇÕES</span>
             </span>
           </Link>
 

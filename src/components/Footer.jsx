@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Coluna 1: Sobre a Empresa */}
         <div className="space-y-4">
           <span className="text-2xl font-black tracking-tight text-white">
-            R3<span className="text-amber-500">CONSTRUÇÕES</span>
+            R3 <span className="text-amber-500">CONSTRUÇÕES</span>
           </span>
           <p className="text-sm text-slate-400">
             Tudo para a sua obra, do alicerce ao acabamento. Rapidez na retirada e o melhor atendimento da região. 20 ANOS CONSTRUINDO SONHOS.
