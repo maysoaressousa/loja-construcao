@@ -2,84 +2,107 @@ import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaStore, FaMotorcycle, FaInstagram, FaArrowRight } from 'react-icons/fa';
 
 export default function Home() {
-  const numeroTelefone = "5585987133705"; 
+  const numeroTelefone = "5585999999999";
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
-  // Dados falsos (mock) para o feed do Instagram
   const instagramPosts = [
-    { id: 1, url: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=500", link: "https://instagram.com/r3.contrucoess" },
-    { id: 2, url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500", link: "https://instagram.com/r3.contrucoess" },
-    { id: 3, url: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500", link: "https://instagram.com/r3.contrucoess" },
-    { id: 4, url: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=500", link: "https://instagram.com/r3.contrucoess" },
+    { id: 1, url: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=500", link: "https://instagram.com" },
+    { id: 2, url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500", link: "https://instagram.com" },
+    { id: 3, url: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500", link: "https://instagram.com" },
+    { id: 4, url: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=500", link: "https://instagram.com" },
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-white min-h-screen">
       
-      {/* Seção Hero (Banner Principal) */}
-      <section className="relative bg-azul-marca text-white py-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200')` }}></div>
-        <div className="relative max-w-4xl mx-auto text-center space-y-6 z-10">
-          <span className="text-laranja-principal font-bold uppercase tracking-wider text-sm bg-laranja-principal/10 px-3 py-1 rounded-full">Do alicerce ao acabamento</span>
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight">
+      {/* SEÇÃO HERO: Ultra limpa no mobile, robusta no desktop */}
+      <section className="bg-azul-marca text-white py-12 px-4 text-center md:py-24 md:px-8 relative overflow-hidden">
+        <div className="max-w-3xl mx-auto space-y-6 relative z-10">
+          <span className="inline-block text-laranja-principal font-bold uppercase tracking-wider text-xs bg-laranja-principal/10 px-3 py-1.5 rounded-md">
+            Do alicerce au acabamento
+          </span>
+          
+          <h1 className="text-3xl font-black tracking-tight leading-tight md:text-6xl">
             Tudo para a sua Obra com o <span className="text-laranja-principal">Melhor Preço</span>
           </h1>
-          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto">
-            Faça seu orçamento pelo WhatsApp, pague sem sair de casa e retire no local ou envie um Uber Entrega.
+          
+          <p className="text-base text-slate-300 max-w-md mx-auto md:text-lg md:max-w-2xl">
+            Faça seu orçamento pelo WhatsApp, pague sem sair de casa e retire no local ou peça um Uber Entrega.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all w-full sm:w-auto justify-center">
-              <FaWhatsapp size={24} />
-              <span>Solicitar Orçamento Agora</span>
+          
+          {/* Botões: Stacking vertical no celular (w-full) e lado a lado no PC */}
+          <div className="flex flex-col gap-3 pt-4 max-w-xs mx-auto sm:max-w-none sm:flex-row sm:justify-center">
+            <a 
+              href={whatsappUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl shadow-md active:scale-98 transition-all w-full sm:w-auto"
+            >
+              <FaWhatsapp size={20} />
+              <span>Solicitar Orçamento</span>
             </a>
-            <Link to="/categorias" className="flex items-center space-x-2 bg-slate-700 hover:bg-slate-600 text-white font-medium px-8 py-4 rounded-xl transition-all w-full sm:w-auto justify-center border border-slate-600">
+            
+            <Link 
+              to="/categorias" 
+              className="flex items-center justify-center space-x-2 bg-transparent hover:bg-white/5 text-white font-medium py-4 px-6 rounded-xl border border-white/20 transition-all w-full sm:w-auto"
+            >
               <span>Ver Produtos</span>
-              <FaArrowRight size={16} />
+              <FaArrowRight size={14} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Seção Como Funciona (Retirada/Uber) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl font-black text-slate-800">Compre e Retire com Agilidade</h2>
-          <p className="text-slate-600 mt-2">Esqueça fretes demorados. Aqui você está no controle do envio.</p>
+      {/* SEÇÃO LOGÍSTICA: Um embaixo do outro no celular, grid no PC */}
+      <section className="py-12 px-4 max-w-7xl mx-auto md:py-20 md:px-8">
+        <div className="text-center max-w-xl mx-auto mb-10">
+          <h2 className="text-2xl font-extrabold text-azul-marca md:text-3xl">Compre e Retire com Agilidade</h2>
+          <p className="text-slate-500 text-sm mt-1">Aqui você não perde tempo esperando entregas demoradas.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 flex flex-col items-center text-center space-y-4">
-            <div className="bbg-orange-100 text-laranja-principal p-4 rounded-full"><FaStore size={32} /></div>
-            <h3 className="text-xl font-bold text-slate-800">Retirada no Balcão</h3>
-            <p className="text-slate-600 text-sm">Feche o pedido pelo WhatsApp, passe na nossa loja física e nós ajudamos você a carregar tudo no seu veículo com rapidez.</p>
+        
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+          {/* Card 1 */}
+          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center space-y-3">
+            <div className="bg-orange-100 text-laranja-principal p-3.5 rounded-xl"><FaStore size={24} /></div>
+            <h3 className="text-lg font-bold text-azul-marca">Retirada no Balcão</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Feche seu pedido pelo WhatsApp, passe na nossa loja e nós ajudamos a carregar tudo no seu veículo com rapidez.
+            </p>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 flex flex-col items-center text-center space-y-4">
-            <div className="bg-green-100 text-green-600 p-4 rounded-full"><FaMotorcycle size={32} /></div>
-            <h3 className="text-xl font-bold text-slate-800">Uber Flash / Moto</h3>
-            <p className="text-slate-600 text-sm">Não pode vir buscar? Solicite um motorista ou entregador de aplicativo (Uber/99) e nos envie o código. Despachamos para você imediatamente.</p>
+          
+          {/* Card 2 */}
+          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center space-y-3">
+            <div className="bg-green-100 text-green-600 p-3.5 rounded-xl"><FaMotorcycle size={24} /></div>
+            <h3 className="text-lg font-bold text-azul-marca">Uber Flash / Moto</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Não pode vir? Solicite um motorista ou entregador de aplicativo (Uber/99) e nos envie o código. Despachamos na hora.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Seção Feed do Instagram */}
-      <section className="bg-white py-16 border-t border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
+      {/* INSTAGRAM: Grid inteligente 2x2 no mobile e 4x1 no PC */}
+      <section className="py-12 px-4 border-t border-slate-100 bg-slate-50/50 md:py-16 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center text-center mb-8 space-y-2 md:flex-row md:justify-between md:text-left md:space-y-0">
             <div>
-              <h2 className="text-3xl font-black text-slate-800 flex items-center gap-2">
-                <FaInstagram className="text-pink-600" /> Siga nosso Instagram
+              <h2 className="text-2xl font-extrabold text-azul-marca flex items-center justify-center gap-2 md:justify-start">
+                <FaInstagram className="text-pink-600" /> Siga a R3 no Instagram
               </h2>
-              <p className="text-slate-600 mt-1">Fique por dentro das novidades, ofertas e reposições de estoque.</p>
+              <p className="text-slate-500 text-sm">Acompanhe nossas novidades e ofertas de estoque.</p>
             </div>
-            <a href="https://instagram.com/r3.contrucoess" target="_blank" rel="noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2 text-sm">
-              <span>Acessar @r3.contrucoess</span>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="inline-block bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold px-4 py-2 rounded-xl text-xs shadow-sm transition-all">
+              Acessar Perfil
             </a>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          
+          {/* grid-cols-2 no celular garante que as fotos não fiquem gigantes e verticais */}
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
             {instagramPosts.map((post) => (
-              <a key={post.id} href={post.link} target="_blank" rel="noopener noreferrer" className="group relative aspect-square block overflow-hidden rounded-xl bg-slate-200 shadow-sm">
-                <img src={post.url} alt="Post do Instagram" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <FaInstagram className="text-white text-3xl" />
+              <a key={post.id} href={post.link} target="_blank" rel="noopener noreferrer" className="group relative aspect-square block overflow-hidden rounded-xl bg-slate-200">
+                <img src={post.url} alt="Instagram" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-black/20 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <FaInstagram className="text-white text-xl md:text-2xl" />
                 </div>
               </a>
             ))}
