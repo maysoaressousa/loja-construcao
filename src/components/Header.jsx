@@ -15,7 +15,7 @@ export default function Header() {
   // Estilização dinâmica para o link da página ativa
   const linkStyle = ({ isActive }) => 
     `text-base font-medium transition-colors duration-200 block py-2 md:py-0 ${
-      isActive ? 'text-amber-600 font-semibold' : 'text-slate-700 hover:text-amber-600'
+      isActive ? 'text-laranja-principal font-semibold' : 'text-slate-700 hover:text-laranja-principal'
     }`;
 
   return (
@@ -26,7 +26,7 @@ export default function Header() {
           {/* Logo da Loja */}
           <Link to="/" className="flex items-center">
             <span className="text-2xl font-black tracking-tight text-slate-800">
-              CONSTRU<span className="text-amber-600">FORT</span>
+              R3<span className="text-laranja-principal">CONSTRUÇÕES</span>
             </span>
           </Link>
 

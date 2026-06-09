@@ -5,19 +5,19 @@ export default function Footer() {
   const anoAtual = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-12 pb-6">
+    <footer className="bg-azul-marca text-slate-300 pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Coluna 1: Sobre a Empresa */}
         <div className="space-y-4">
           <span className="text-2xl font-black tracking-tight text-white">
-            CONSTRU<span className="text-amber-500">FORT</span>
+            R3<span className="text-amber-500">CONSTRUÇÕES</span>
           </span>
           <p className="text-sm text-slate-400">
-            Tudo para a sua obra, do alicerce ao acabamento. Rapidez na retirada e o melhor atendimento da região.
+            Tudo para a sua obra, do alicerce ao acabamento. Rapidez na retirada e o melhor atendimento da região. 20 ANOS CONSTRUINDO SONHOS.
           </p>
           <div className="flex space-x-4 pt-2">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors text-xl" aria-label="Instagram">
+            <a href="https://instagram.com/r3.contrucoess" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors text-xl" aria-label="Instagram">
               <FaInstagram />
             </a>
           </div>
@@ -25,7 +25,7 @@ export default function Footer() {
 
         {/* Coluna 2: Links de Navegação */}
         <div>
-          <h3 className="text-white font-semibold text-lg mb-4 border-l-4 border-amber-500 pl-2">Navegação</h3>
+          <h3 className="text-white font-semibold text-lg mb-4 border-l-4 border-laranja-principal pl-2">Navegação</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-white transition-colors">Início</Link></li>
             <li><Link to="/categorias" className="hover:text-white transition-colors">Categorias de Materiais</Link></li>
@@ -50,16 +50,16 @@ export default function Footer() {
           <h3 className="text-white font-semibold text-lg mb-4 border-l-4 border-amber-500 pl-2">Atendimento</h3>
           <div className="flex items-start space-x-2">
             <FaMapMarkerAlt className="text-amber-500 mt-1 flex-shrink-0" />
-            <span>Av. Principal, 1234 - Bairro, Fortaleza - CE</span>
+            <span>R. Padre Sá Leitão, 164 - Henrique Jorge, Fortaleza - CE, 60521-032</span>
           </div>
           <div className="flex items-center space-x-2">
             <FaPhoneAlt className="text-amber-500 flex-shrink-0" />
-            <span>(85) 99999-9999</span>
+            <span>(85) 98713-3705</span>
           </div>
           <div className="flex items-start space-x-2">
             <FaClock className="text-amber-500 mt-1 flex-shrink-0" />
             <div>
-              <p>Seg a Sex: 07:30 às 17:30</p>
+              <p>Seg a Sex: 07:30 às 18:30</p>
               <p>Sábado: 08:00 às 12:00</p>
             </div>
           </div>

@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  /* Substitua pelos tons exatos da R3 Construções se preferir */
+  --color-laranja-principal: #f97316; /* Laranja vivo e forte */
+  --color-laranja-hover: #ea580c;     /* Laranja um pouco mais escuro para efeitos de passar o mouse */
+  --color-azul-marca: #0f172a;        /* Um azul escuro profundo (combina muito bem com o fundo do Hero e do Footer) */
+  --color-azul-brilhante: #1e40af;   /* Um azul mais aberto para destaques e links */
+}
