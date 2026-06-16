@@ -3,7 +3,7 @@ import { FaWhatsapp, FaStore, FaMotorcycle, FaInstagram, FaArrowRight } from 're
 import Marketplaces from './Marketplaces';
 
 export default function Home() {
-  const numeroTelefone = "5585987133705"; // Substitua pelo número real da loja
+  const numeroTelefone = "5585987133705"; // 
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
   const instagramPosts = [
