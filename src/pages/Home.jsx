@@ -1,16 +1,20 @@
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaStore, FaMotorcycle, FaInstagram, FaArrowRight } from 'react-icons/fa';
 import Marketplaces from './Marketplaces';
+import imgBasico from '../assets/instagram-1.jpg';
+import imgHidraulica from '../assets/instagram-2.jpg';
+import imgEletrica from '../assets/instagram3.jpg';
+import imgFerramentas from '../assets/instagram-4.jpg';
 
 export default function Home() {
   const numeroTelefone = "5585987133705"; // 
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
   const instagramPosts = [
-    { id: 1, url: "/src/assets/instagram-1.jpg", link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 2, url: "/src/assets/instagram-2.jpg", link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 3, url: "/src/assets/instagram-3.jpg", link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 4, url: "/src/assets/instagram-4.jpg", link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 1, url: imgBasico, link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 2, url: imgHidraulica, link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 3, url: imgEletrica, link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 4, url: imgFerramentas, link: "https://www.instagram.com/r3.construcoess/" },
   ];
 
   return (
