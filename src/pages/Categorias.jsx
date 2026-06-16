@@ -9,42 +9,42 @@ export default function Categorias() {
       nome: "Material Básico",
       icone: <FaLayerGroup />,
       desc: "Cimento, tijolos, areia, brita, ferro e ferragens estruturais.",
-      imageUrl: "/src/public/material-basico.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/public/material-basico.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 2,
       nome: "Hidráulica",
       icone: <FaTint />,
       desc: "Tubos, conexões, caixas d'água, registros e reparos.",
-      imageUrl: "/src/public/hidraulica.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/public/hidraulica.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 3,
       nome: "Elétrica",
       icone: <FaLightbulb />,
       desc: "Fios, cabos, disjuntores, tomadas, interruptores e iluminação.",
-      imageUrl: "/src/public/eletrica.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/public/eletrica.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 4,
       nome: "Ferramentas",
       icone: <FaWrench />,
       desc: "Ferramentas manuais e elétricas, discos de corte e EPIs.",
-      imageUrl: "/src/public/ferramentas.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/public/ferramentas.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 5,
       nome: "Pisos e Revestimentos",
       icone: <FaBorderAll />,
       desc: "Cerâmicas, porcelanatos, argamassas e rejuntes.",
-      imageUrl: "/src/public/pisos-e-revestimentos.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/public/pisos-e-revestimentos.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 6,
       nome: "Tintas e Acabamento",
       icone: <FaTools />,
       desc: "Tintas imobiliárias, massas, texturas, rolos e pincéis.",
-      imageUrl: "/src/public/tintas.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/public/tintas.png", // Substitua pelo caminho correto da imagem
     },
   ];
 
