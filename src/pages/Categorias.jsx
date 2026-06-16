@@ -1,49 +1,57 @@
 import { FaTools, FaWrench, FaLightbulb, FaTint, FaBorderAll, FaLayerGroup } from 'react-icons/fa';
+import imgBasico from '../assets/material-basico.png';
+import imgHidraulica from '../assets/hidraulica.png';
+import imgEletrica from '../assets/eletrica.png';
+import imgFerramentas from '../assets/ferramentas.png';
+import imgPisos from '../assets/pisos-e-revestimentos.png';
+import imgTintas from '../assets/tintas.png';
+
 export default function Categorias() {
   const numeroTelefone = "5585987133705";
 
+  // 2. Troque as strings fixas pelas variáveis que você importou acima
   const listaCategorias = [
     {
       id: 1,
       nome: "Material Básico",
       icone: <FaLayerGroup />,
       desc: "Cimento, tijolos, areia, brita, ferro e ferragens estruturais.",
-      imageUrl: "/material-basico.png", // Substitua pelo caminho correto da imagem
+      imageUrl: imgBasico, // 👈 Agora aponta para a imagem importada
     },
     {
       id: 2,
       nome: "Hidráulica",
       icone: <FaTint />,
       desc: "Tubos, conexões, caixas d'água, registros e reparos.",
-      imageUrl: "/hidraulica.png", // Substitua pelo caminho correto da imagem
+      imageUrl: imgHidraulica,
     },
     {
       id: 3,
       nome: "Elétrica",
       icone: <FaLightbulb />,
       desc: "Fios, cabos, disjuntores, tomadas, interruptores e iluminação.",
-      imageUrl: "/eletrica.png", // Substitua pelo caminho correto da imagem
+      imageUrl: imgEletrica,
     },
     {
       id: 4,
       nome: "Ferramentas",
       icone: <FaWrench />,
       desc: "Ferramentas manuais e elétricas, discos de corte e EPIs.",
-      imageUrl: "/ferramentas.png", // Substitua pelo caminho correto da imagem
+      imageUrl: imgFerramentas,
     },
     {
       id: 5,
       nome: "Pisos e Revestimentos",
       icone: <FaBorderAll />,
       desc: "Cerâmicas, porcelanatos, argamassas e rejuntes.",
-      imageUrl: "/pisos-e-revestimentos.png", // Substitua pelo caminho correto da imagem
+      imageUrl: imgPisos,
     },
     {
       id: 6,
       nome: "Tintas e Acabamento",
       icone: <FaTools />,
       desc: "Tintas imobiliárias, massas, texturas, rolos e pincéis.",
-      imageUrl: "/tintas.png", // Substitua pelo caminho correto da imagem
+      imageUrl: imgTintas,
     },
   ];
 
