@@ -7,10 +7,10 @@ export default function Home() {
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
   const instagramPosts = [
-    { id: 1, url: "/src/assets/(4) Instagram (1).jpg", link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 2, url: "/src/assets/(4) Instagram (2).jpg", link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 3, url: "/src/assets/(4) Instagram (3).jpg", link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 4, url: "/src/assets/(4) Instagram.jpg", link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 1, url: "/src/assets/instagram-1.jpg", link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 2, url: "/src/assets/instagram-2.jpg", link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 3, url: "/src/assets/instagram-3.jpg", link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 4, url: "/src/assets/instagram-4.jpg", link: "https://www.instagram.com/r3.construcoess/" },
   ];
 
   return (
