@@ -1,4 +1,4 @@
-import { FaTools, FaWrench, FaLightbulb, FaTint, FaBorderAll, FaLayerGroup } from 'react-icons/fa';
+import { FaTools, FaWrench, FaLightbulb, FaTint, FaBorderAll, FaLayerGroup, FaWhatsapp } from 'react-icons/fa';
 import imgBasico from '../assets/material-basico.png';
 import imgHidraulica from '../assets/hidraulica.png';
 import imgEletrica from '../assets/eletrica.png';
@@ -88,6 +88,14 @@ export default function Categorias() {
                     {cat.icone}
                   </div>
                 </div>
+                <button
+                  onClick={() => handleConsultarEstoque(cat.nome)}
+                  className="absolute right-4 bottom-4 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg flex items-center gap-2 text-xs shadow-md"
+                  aria-label={`Abrir WhatsApp para ${cat.nome}`}
+                >
+                  <FaWhatsapp />
+                  <span>WhatsApp</span>
+                </button>
               </div>
 
               <div className="p-5 flex flex-col justify-between h-full">
