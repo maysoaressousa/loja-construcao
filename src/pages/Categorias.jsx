@@ -1,5 +1,4 @@
 import { FaTools, FaWrench, FaLightbulb, FaTint, FaBorderAll, FaLayerGroup } from 'react-icons/fa';
-
 export default function Categorias() {
   const numeroTelefone = "5585987133705";
 
@@ -9,42 +8,42 @@ export default function Categorias() {
       nome: "Material Básico",
       icone: <FaLayerGroup />,
       desc: "Cimento, tijolos, areia, brita, ferro e ferragens estruturais.",
-      imageUrl: "/public/material-basico.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/material-basico.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 2,
       nome: "Hidráulica",
       icone: <FaTint />,
       desc: "Tubos, conexões, caixas d'água, registros e reparos.",
-      imageUrl: "/public/hidraulica.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/hidraulica.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 3,
       nome: "Elétrica",
       icone: <FaLightbulb />,
       desc: "Fios, cabos, disjuntores, tomadas, interruptores e iluminação.",
-      imageUrl: "/public/eletrica.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/eletrica.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 4,
       nome: "Ferramentas",
       icone: <FaWrench />,
       desc: "Ferramentas manuais e elétricas, discos de corte e EPIs.",
-      imageUrl: "/public/ferramentas.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/ferramentas.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 5,
       nome: "Pisos e Revestimentos",
       icone: <FaBorderAll />,
       desc: "Cerâmicas, porcelanatos, argamassas e rejuntes.",
-      imageUrl: "/public/pisos-e-revestimentos.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/pisos-e-revestimentos.png", // Substitua pelo caminho correto da imagem
     },
     {
       id: 6,
       nome: "Tintas e Acabamento",
       icone: <FaTools />,
       desc: "Tintas imobiliárias, massas, texturas, rolos e pincéis.",
-      imageUrl: "/public/tintas.png", // Substitua pelo caminho correto da imagem
+      imageUrl: "/tintas.png", // Substitua pelo caminho correto da imagem
     },
   ];
 
