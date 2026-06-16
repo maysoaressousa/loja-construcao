@@ -7,10 +7,10 @@ export default function Home() {
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
   const instagramPosts = [
-    { id: 1, url: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=500", link: "https://instagram.com" },
-    { id: 2, url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500", link: "https://instagram.com" },
-    { id: 3, url: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500", link: "https://instagram.com" },
-    { id: 4, url: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=500", link: "https://instagram.com" },
+    { id: 1, url: "/src/assets/(4) Instagram (1).jpg", link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 2, url: "/src/assets/(4) Instagram (2).jpg", link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 3, url: "/src/assets/(4) Instagram (3).jpg", link: "https://www.instagram.com/r3.construcoess/" },
+    { id: 4, url: "/src/assets/(4) Instagram.jpg", link: "https://www.instagram.com/r3.construcoess/" },
   ];
 
   return (
@@ -95,7 +95,7 @@ export default function Home() {
               </h2>
               <p className="text-slate-500 text-sm">Acompanhe nossas novidades e ofertas de estoque.</p>
             </div>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="inline-block bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold px-4 py-2 rounded-xl text-xs shadow-sm transition-all">
+            <a href="https://www.instagram.com/r3.construcoess/" target="_blank" rel="noopener noreferrer" className="inline-block bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold px-4 py-2 rounded-xl text-xs shadow-sm transition-all">
               Acessar Perfil
             </a>
           </div>

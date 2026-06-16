@@ -1,15 +1,51 @@
 import { FaTools, FaWrench, FaLightbulb, FaTint, FaBorderAll, FaLayerGroup } from 'react-icons/fa';
 
 export default function Categorias() {
-  const numeroTelefone = "5585999999999";
+  const numeroTelefone = "55585987133705";
 
   const listaCategorias = [
-    { id: 1, nome: "Material Básico", icone: <FaLayerGroup />, desc: "Cimento, tijolos, areia, brita, ferro e ferragens estruturais." },
-    { id: 2, nome: "Hidráulica", icone: <FaTint />, desc: "Tubos, conexões, caixas d'água, registros e reparos." },
-    { id: 3, nome: "Elétrica", icone: <FaLightbulb />, desc: "Fios, cabos, disjuntores, tomadas, interruptores e iluminação." },
-    { id: 4, nome: "Ferramentas", icone: <FaWrench />, desc: "Ferramentas manuais e elétricas, discos de corte e EPIs." },
-    { id: 5, nome: "Pisos e Revestimentos", icone: <FaBorderAll />, desc: "Cerâmicas, porcelanatos, argamassas e rejuntes." },
-    { id: 6, nome: "Tintas e Acabamento", icone: <FaTools />, desc: "Tintas imobiliárias, massas, texturas, rolos e pincéis." },
+    {
+      id: 1,
+      nome: "Material Básico",
+      icone: <FaLayerGroup />,
+      desc: "Cimento, tijolos, areia, brita, ferro e ferragens estruturais.",
+      imageUrl: "/src/assets/material-basico.png", // Substitua pelo caminho correto da imagem
+    },
+    {
+      id: 2,
+      nome: "Hidráulica",
+      icone: <FaTint />,
+      desc: "Tubos, conexões, caixas d'água, registros e reparos.",
+      imageUrl: "/src/assets/hidraulica.png", // Substitua pelo caminho correto da imagem
+    },
+    {
+      id: 3,
+      nome: "Elétrica",
+      icone: <FaLightbulb />,
+      desc: "Fios, cabos, disjuntores, tomadas, interruptores e iluminação.",
+      imageUrl: "/src/assets/eletrica.png", // Substitua pelo caminho correto da imagem
+    },
+    {
+      id: 4,
+      nome: "Ferramentas",
+      icone: <FaWrench />,
+      desc: "Ferramentas manuais e elétricas, discos de corte e EPIs.",
+      imageUrl: "/src/assets/ferramentas.png", // Substitua pelo caminho correto da imagem
+    },
+    {
+      id: 5,
+      nome: "Pisos e Revestimentos",
+      icone: <FaBorderAll />,
+      desc: "Cerâmicas, porcelanatos, argamassas e rejuntes.",
+      imageUrl: "/src/assets/pisos-e-revestimentos.png", // Substitua pelo caminho correto da imagem
+    },
+    {
+      id: 6,
+      nome: "Tintas e Acabamento",
+      icone: <FaTools />,
+      desc: "Tintas imobiliárias, massas, texturas, rolos e pincéis.",
+      imageUrl: "/src/assets/tintas.png", // Substitua pelo caminho correto da imagem
+    },
   ];
 
   const handleConsultarEstoque = (nomeCategoria) => {
@@ -32,19 +68,27 @@ export default function Categorias() {
         {/* 1 coluna no celular, 2 no tablet, 3 no PC */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
           {listaCategorias.map((cat) => (
-            <div key={cat.id} className="bg-white rounded-2xl border border-slate-100 p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-start space-x-4">
-                {/* Ícone menor e mais discreto no mobile */}
-                <div className="bg-laranja-principal text-white w-12 h-12 rounded-xl flex items-center justify-center text-xl shadow-sm flex-shrink-0">
-                  {cat.icone}
-                </div>
-                <div className="space-y-1">
-                  <h2 className="text-lg font-bold text-azul-marca">{cat.nome}</h2>
-                  <p className="text-slate-500 text-xs leading-relaxed">{cat.desc}</p>
+            <div key={cat.id} className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={cat.imageUrl}
+                  alt={cat.nome}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                <div className="absolute left-4 bottom-4 text-white">
+                  <div className="bg-laranja-principal text-white w-12 h-12 rounded-xl flex items-center justify-center text-xl shadow-sm">
+                    {cat.icone}
+                  </div>
                 </div>
               </div>
-              
-              <div className="pt-4 mt-4 border-t border-slate-100">
+
+              <div className="p-5 flex flex-col justify-between h-full">
+                <div className="space-y-3">
+                  <h2 className="text-lg font-bold text-azul-marca">{cat.nome}</h2>
+                  <p className="text-slate-500 text-sm leading-relaxed">{cat.desc}</p>
+                </div>
+
                 <button
                   onClick={() => handleConsultarEstoque(cat.nome)}
                   className="w-full bg-slate-100 hover:bg-laranja-principal hover:text-white text-azul-marca font-semibold py-3 px-4 rounded-xl transition-all text-xs flex items-center justify-center"
