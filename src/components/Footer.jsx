@@ -69,7 +69,7 @@ export default function Footer() {
 
       {/* Direitos Autorais */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
-        <p>&copy; {anoAtual} ConstruFort. Todos os direitos reservados.</p>
+        <p>&copy; {anoAtual} R3 Construções. Todos os direitos reservados.</p>
       </div>
     </footer>
   );
