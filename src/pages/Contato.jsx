@@ -40,8 +40,8 @@ export default function Contato() {
               <div className="bg-blue-100 text-blue-600 p-3 rounded-xl mt-1"><FaClock size={20} /></div>
               <div className="space-y-1">
                 <h3 className="font-bold text-slate-800">Horário Comercial</h3>
-                <p className="text-slate-600 text-sm">Segunda a Sexta: 07:30 às 17:30</p>
-                <p className="text-slate-600 text-sm">Sábado: 08:00 às 12:00</p>
+                <p className="text-slate-600 text-sm">Segunda a Sexta: 07:00 às 17:30</p>
+                <p className="text-slate-600 text-sm">Sábado: 07:00 às 14:00</p>
               </div>
             </div>
 
@@ -49,7 +49,8 @@ export default function Contato() {
               <div className="bg-purple-100 text-purple-600 p-3 rounded-xl mt-1"><FaEnvelope size={20} /></div>
               <div className="space-y-1">
                 <h3 className="font-bold text-slate-800">E-mail</h3>
-                <p className="text-slate-600 text-sm">contato@construfort.com</p>
+                <p className="text-slate-600 text-sm">r3construecomm@gmail.com
+</p>
               </div>
             </div>
           </div>

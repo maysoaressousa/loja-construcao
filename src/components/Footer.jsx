@@ -61,6 +61,9 @@ export default function Footer() {
             <div>
               <p>Seg a Sex: 07:30 às 18:30</p>
               <p>Sábado: 08:00 às 12:00</p>
+              <a href="mailto:r3construecomm@gmail.com" className="hover:text-white transition-colors">
+                r3construecomm@gmail.com
+              </a>
             </div>
           </div>
         </div>
