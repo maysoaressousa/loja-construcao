@@ -24,9 +24,14 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           
           {/* Logo da Loja */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/r3-logo.svg"
+              alt="R3 Construções"
+              className="h-14 w-auto"
+            />
             <span className="text-2xl font-black tracking-tight text-slate-800">
-              R3 <span className="text-laranja-principal">CONSTRUÇÕES</span>
+              <span className="text-laranja-principal">CONSTRUÇÕES</span>
             </span>
           </Link>
 
