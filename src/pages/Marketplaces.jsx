@@ -2,7 +2,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 
 export default function Marketplaces() {
   return (
-    <section className="bg-azul-marca text-white py-12 px-4 md:py-16 relative overflow-hidden border-t border-white/5">
+    <section className="bg-[#2b2d91] text-white py-12 px-4 md:py-16 relative overflow-hidden border-t border-white/5">
       {/* Detalhe decorativo de fundo */}
       <div className="absolute top-0 right-0 w-48 h-48 bg-laranja-principal/10 rounded-full blur-3xl pointer-events-none"></div>
       

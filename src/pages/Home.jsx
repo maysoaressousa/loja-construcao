@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaStore, FaMotorcycle, FaInstagram, FaArrowRight } from 'react-icons/fa';
 import Marketplaces from './Marketplaces';
 
-// 1. Importe as imagens dos seus banners da pasta assets
+// 1. Importe as imagens dos seus banners e posts do Instagram
 import banner1 from '../assets/banner-1.png'; // Altere para o nome real do seu arquivo
 import banner2 from '../assets/banner-2.png';
 import banner3 from '../assets/banner-3.png';
 import banner4 from '../assets/banner-4.png';
+import instagram1 from '../assets/instagram-1.jpg';
+import instagram2 from '../assets/instagram-2.jpg';
+import instagram3 from '../assets/instagram3.jpg';
+import instagram4 from '../assets/instagram-4.jpg';
 
 export default function Home() {
   const numeroTelefone = "5585987133705";
@@ -28,9 +32,12 @@ export default function Home() {
     return () => clearInterval(intervalo); // Limpa o intervalo se o usuário mudar de página
   }, [banners.length]);
 
-  // Array do Instagram (mantenha como estava)
+  // Array do Instagram com imagens reais
   const instagramPosts = [
-    // ... seus posts do instagram aqui
+    { id: 1, url: instagram1, link: 'https://www.instagram.com/r3.construcoess/' },
+    { id: 2, url: instagram2, link: 'https://www.instagram.com/r3.construcoess/' },
+    { id: 3, url: instagram3, link: 'https://www.instagram.com/r3.construcoess/' },
+    { id: 4, url: instagram4, link: 'https://www.instagram.com/r3.construcoess/' },
   ];
 
   return (
