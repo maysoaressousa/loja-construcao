@@ -1,47 +1,68 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaStore, FaMotorcycle, FaInstagram, FaArrowRight } from 'react-icons/fa';
 import Marketplaces from './Marketplaces';
-import imgBasico from '../assets/instagram-1.jpg';
-import imgHidraulica from '../assets/instagram-2.jpg';
-import imgEletrica from '../assets/instagram3.jpg';
-import imgFerramentas from '../assets/instagram-4.jpg';
+
+// 1. Importe as imagens dos seus banners da pasta assets
+import banner1 from '../assets/banner-1.png'; // Altere para o nome real do seu arquivo
+import banner2 from '../assets/banner-2.png';
+import banner3 from '../assets/banner-3.png';
+import banner4 from '../assets/banner-4.png';
 
 export default function Home() {
-  const numeroTelefone = "5585987133705"; // 
+  const numeroTelefone = "5585987133705";
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
+  // 2. Agrupe os banners em um array
+  const banners = [banner1, banner2, banner3, banner4];
+  
+  // Estado para controlar qual banner está ativo
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Efeito para rodar os banners automaticamente a cada 5 segundos
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % banners.length);
+    }, 5000); // 5000ms = 5 segundos
+
+    return () => clearInterval(intervalo); // Limpa o intervalo se o usuário mudar de página
+  }, [banners.length]);
+
+  // Array do Instagram (mantenha como estava)
   const instagramPosts = [
-    { id: 1, url: imgBasico, link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 2, url: imgHidraulica, link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 3, url: imgEletrica, link: "https://www.instagram.com/r3.construcoess/" },
-    { id: 4, url: imgFerramentas, link: "https://www.instagram.com/r3.construcoess/" },
+    // ... seus posts do instagram aqui
   ];
 
   return (
     <div className="bg-white min-h-screen">
       
-      {/* SEÇÃO HERO: Ultra limpa no mobile, robusta no desktop */}
-      <section className="bg-azul-marca text-white py-12 px-4 text-center md:py-24 md:px-8 relative overflow-hidden">
-        <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-          <span className="inline-block text-laranja-principal font-bold uppercase tracking-wider text-xs bg-laranja-principal/10 px-3 py-1.5 rounded-md">
-            Do alicerce ao acabamento
-          </span>
+      {/* SEÇÃO HERO: Com Banners Inteligentes em Carrossel */}
+      <section className="relative bg-white text-white py-16 px-0 text-center md:py-20 md:px-0 overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center justify-center w-full">
+        
+        {/* 3. CAMADA DOS BANNERS (Ficam rodando ao fundo com efeito suave de fade) */}
+        <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center">
+          {banners.map((banner, index) => (
+            <img
+              key={index}
+              src={banner}
+              alt={`Banner R3 ${index + 1}`}
+              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
           
-          <h1 className="text-3xl font-black tracking-tight leading-tight md:text-6xl">
-            Tudo para a sua Obra com o <span className="text-laranja-principal">Melhor Preço</span>
-          </h1>
-          
-          <p className="text-base text-slate-300 max-w-md mx-auto md:text-lg md:max-w-2xl">
-            Faça seu orçamento pelo WhatsApp, pague sem sair de casa e retire no local ou peça um Uber Entrega.
-          </p>
-          
-          {/* Botões: Stacking vertical no celular (w-full) e lado a lado no PC */}
-          <div className="flex flex-col gap-3 pt-4 max-w-xs mx-auto sm:max-w-none sm:flex-row sm:justify-center">
+          {/* Efeito de escurecimento removido para deixar banners em evidência */}
+        </div>
+        
+        {/* 4. CAMADA DO CONTEÚDO (Posiciona os botões à esquerda e inferiormente) */}
+        <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-start pl-8 md:pl-12 pb-8">
+          <div className="flex flex-row gap-3 p-4 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl max-w-max w-full sm:w-auto">
             <a 
               href={whatsappUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl shadow-md active:scale-98 transition-all w-full sm:w-auto"
+              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg active:scale-98 transition-all w-full sm:w-auto cursor-pointer"
             >
               <FaWhatsapp size={20} />
               <span>Solicitar Orçamento</span>
@@ -49,13 +70,14 @@ export default function Home() {
             
             <Link 
               to="/categorias" 
-              className="flex items-center justify-center space-x-2 bg-transparent hover:bg-white/5 text-white font-medium py-4 px-6 rounded-xl border border-white/20 transition-all w-full sm:w-auto"
+              className="flex items-center justify-center space-x-2 bg-white/20 hover:bg-white/30 text-white font-semibold py-4 px-6 rounded-xl border border-white/20 transition-all w-full sm:w-auto cursor-pointer"
             >
               <span>Ver Produtos</span>
               <FaArrowRight size={14} />
             </Link>
           </div>
         </div>
+
       </section>
 
       {/* SEÇÃO LOGÍSTICA: Um embaixo do outro no celular, grid no PC */}
