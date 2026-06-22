@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaStore, FaMotorcycle, FaInstagram, FaArrowRight } from 'react-icons/fa';
 import Marketplaces from './Marketplaces';
+import Categorias from './Categorias'; // 👈 O seu import já estava certinho aqui!
+
 
 // 1. Importe as imagens dos seus banners e posts do Instagram
-import banner1 from '../assets/banner-1.png'; // Altere para o nome real do seu arquivo
+import banner1 from '../assets/banner-1.png'; 
 import banner2 from '../assets/banner-2.png';
 import banner3 from '../assets/banner-3.png';
 import banner4 from '../assets/banner-4.png';
@@ -12,6 +14,7 @@ import instagram1 from '../assets/instagram-1.jpg';
 import instagram2 from '../assets/instagram-2.jpg';
 import instagram3 from '../assets/instagram3.jpg';
 import instagram4 from '../assets/instagram-4.jpg';
+import imgLogistica from '../assets/logistica.png'; // 
 
 export default function Home() {
   const numeroTelefone = "5585987133705";
@@ -43,41 +46,39 @@ export default function Home() {
   return (
     <div className="bg-white min-h-screen">
       
-      {/* SEÇÃO HERO: Com Banners Inteligentes em Carrossel */}
-      <section className="relative bg-white text-white py-16 px-0 text-center md:py-20 md:px-0 overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center justify-center w-full">
+      {/* SEÇÃO HERO: Banners rotativos */}
+      <section className="relative bg-[#0a1931] text-white overflow-hidden w-full flex flex-col md:block">
         
-        {/* 3. CAMADA DOS BANNERS (Ficam rodando ao fundo com efeito suave de fade) */}
-        <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center">
+        {/* CONTAINER DOS BANNERS */}
+        <div className="relative w-full aspect-[16/7] sm:aspect-[21/9] md:h-[500px] lg:h-[600px] overflow-hidden flex items-center justify-center bg-[#0a1931]">
           {banners.map((banner, index) => (
             <img
               key={index}
               src={banner}
               alt={`Banner R3 ${index + 1}`}
-              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             />
           ))}
-          
-          {/* Efeito de escurecimento removido para deixar banners em evidência */}
         </div>
         
-        {/* 4. CAMADA DO CONTEÚDO (Posiciona os botões à esquerda e inferiormente) */}
-        <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-start pl-8 md:pl-12 pb-8">
-          <div className="flex flex-row gap-3 p-4 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl max-w-max w-full sm:w-auto">
+        {/* CAMADA DO CONTEÚDO: Botões fixos na base */}
+        <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-center md:justify-start px-4 pb-4 md:pl-12 md:pb-8 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pt-16">
+          <div className="flex flex-col sm:flex-row gap-3 p-2.5 rounded-2xl bg-slate-950/40 backdrop-blur-md border border-white/10 shadow-2xl w-full max-w-sm sm:max-w-none sm:w-auto">
             <a 
               href={whatsappUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg active:scale-98 transition-all w-full sm:w-auto cursor-pointer"
+              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-5 rounded-xl shadow-lg active:scale-98 transition-all w-full sm:w-auto cursor-pointer text-xs md:text-sm"
             >
-              <FaWhatsapp size={20} />
+              <FaWhatsapp size={18} />
               <span>Solicitar Orçamento</span>
             </a>
             
             <Link 
               to="/categorias" 
-              className="flex items-center justify-center space-x-2 bg-white/20 hover:bg-white/30 text-white font-semibold py-4 px-6 rounded-xl border border-white/20 transition-all w-full sm:w-auto cursor-pointer"
+              className="flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-5 rounded-xl border border-white/10 backdrop-blur-sm transition-all w-full sm:w-auto cursor-pointer text-xs md:text-sm"
             >
               <span>Ver Produtos</span>
               <FaArrowRight size={14} />
@@ -87,35 +88,65 @@ export default function Home() {
 
       </section>
 
-      {/* SEÇÃO LOGÍSTICA: Um embaixo do outro no celular, grid no PC */}
+      {/* 🚀 SEÇÃO CATEGORIAS ADICIONADA AQUI! 
+          Ela vai carregar exatamente o grid com as imagens dos produtos e os botões verdes do WhatsApp */}
+      <Categorias />
+
+      {/* SEÇÃO LOGÍSTICA: Imagem à esquerda no PC, empilhada no celular */}
       <section className="py-12 px-4 max-w-7xl mx-auto md:py-20 md:px-8">
-        <div className="text-center max-w-xl mx-auto mb-10">
-          <h2 className="text-2xl font-extrabold text-azul-marca md:text-3xl">Compre e Retire com Agilidade</h2>
-          <p className="text-slate-500 text-sm mt-1">Aqui você não perde tempo esperando entregas demoradas.</p>
-        </div>
-        
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
-          {/* Card 1 */}
-          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center space-y-3">
-            <div className="bg-orange-100 text-laranja-principal p-3.5 rounded-xl"><FaStore size={24} /></div>
-            <h3 className="text-lg font-bold text-azul-marca">Retirada no Balcão</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              Feche seu pedido pelo WhatsApp, passe na nossa loja e nós ajudamos a carregar tudo no seu veículo com rapidez.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Card 2 */}
-          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center space-y-3">
-            <div className="bg-green-100 text-green-600 p-3.5 rounded-xl"><FaMotorcycle size={24} /></div>
-            <h3 className="text-lg font-bold text-azul-marca">Uber Flash / Moto</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              Não pode vir? Solicite um motorista ou entregador de aplicativo (Uber/99) e nos envie o código. Despachamos na hora.
-            </p>
+          {/* 1. Imagem Alinhada à Esquerda */}
+          <div className="lg:col-span-5 w-full h-64 sm:h-80 lg:h-[400px] rounded-2xl overflow-hidden shadow-sm bg-slate-100">
+            <img 
+              src={imgLogistica} 
+              alt="Logística de Entrega e Retirada R3" 
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
+
+          {/* 2. Conteúdo de Texto e Cards à Direita */}
+          <div className="lg:col-span-7 space-y-8">
+            
+            {/* Textos alinhados de forma elegante */}
+            <div className="text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+              <h2 className="text-2xl font-extrabold text-azul-marca md:text-3xl">
+                Compre e Retire com Agilidade
+              </h2>
+              <p className="text-slate-500 text-sm mt-1">
+                Aqui você não perde tempo esperando entregas demoradas.
+              </p>
+            </div>
+            
+            {/* Grid dos Cards internos (1 coluna no mobile, 2 colunas a partir de telas pequenas) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              {/* Card 1 */}
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center space-y-3">
+                <div className="bg-orange-100 text-laranja-principal p-3.5 rounded-xl"><FaStore size={24} /></div>
+                <h3 className="text-lg font-bold text-azul-marca">Retirada no Balcão</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Feche seu pedido pelo WhatsApp, passe na nossa loja e nós ajudamos a carregar tudo no seu veículo com rapidez.
+                </p>
+              </div>
+              
+              {/* Card 2 */}
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center space-y-3">
+                <div className="bg-green-100 text-green-600 p-3.5 rounded-xl"><FaMotorcycle size={24} /></div>
+                <h3 className="text-lg font-bold text-azul-marca">Uber Flash / Moto</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Não pode vir? Solicite um motorista ou entregador de aplicativo (Uber/99) e nos envie o código. Despachamos na hora.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
-      {/* 2. ENCAIXE A NOVA SEÇÃO AQUI */}
+
+      {/* SEÇÃO MARKETPLACES */}
       <Marketplaces />
 
       {/* INSTAGRAM: Grid inteligente 2x2 no mobile e 4x1 no PC */}
@@ -133,7 +164,6 @@ export default function Home() {
             </a>
           </div>
           
-          {/* grid-cols-2 no celular garante que as fotos não fiquem gigantes e verticais */}
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
             {instagramPosts.map((post) => (
               <a key={post.id} href={post.link} target="_blank" rel="noopener noreferrer" className="group relative aspect-square block overflow-hidden rounded-xl bg-slate-200">
