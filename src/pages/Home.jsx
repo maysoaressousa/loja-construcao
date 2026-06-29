@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaStore, FaMotorcycle, FaInstagram, FaArrowRight } from 'react-icons/fa';
 import Marketplaces from './Marketplaces';
-import Categorias from './Categorias'; // 👈 O seu import já estava certinho aqui!
+import Categorias from './Categorias'; 
+import SecaoOfertas from '../components/SecaoOfertas';
 
 
 // 1. Importe as imagens dos seus banners e posts do Instagram
@@ -14,7 +15,7 @@ import instagram1 from '../assets/instagram-1.jpg';
 import instagram2 from '../assets/instagram-2.jpg';
 import instagram3 from '../assets/instagram3.jpg';
 import instagram4 from '../assets/instagram-4.jpg';
-import imgLogistica from '../assets/logistica.png'; // 
+import imgLogistica from '../assets/instagram-2.jpg'; // 
 
 export default function Home() {
   const numeroTelefone = "5585987133705";
@@ -70,7 +71,7 @@ export default function Home() {
               href={whatsappUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-5 rounded-xl shadow-lg active:scale-98 transition-all w-full sm:w-auto cursor-pointer text-xs md:text-sm"
+              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-5 rounded-xl shadow-lg active:scale-95 transition-all w-full sm:w-auto cursor-pointer text-xs md:text-sm"
             >
               <FaWhatsapp size={18} />
               <span>Solicitar Orçamento</span>
@@ -88,7 +89,10 @@ export default function Home() {
 
       </section>
 
-      {/* 🚀 SEÇÃO CATEGORIAS ADICIONADA AQUI! 
+      {/* SEÇÃO OFERTAS: Grid de Ofertas com 2 colunas no celular e 4 no PC */}
+      <SecaoOfertas />
+
+      {/* 🚀 SEÇÃO CATEGORIAS
           Ela vai carregar exatamente o grid com as imagens dos produtos e os botões verdes do WhatsApp */}
       <Categorias />
 
@@ -148,6 +152,8 @@ export default function Home() {
 
       {/* SEÇÃO MARKETPLACES */}
       <Marketplaces />
+
+      
 
       {/* INSTAGRAM: Grid inteligente 2x2 no mobile e 4x1 no PC */}
       <section className="py-12 px-4 border-t border-slate-100 bg-slate-50/50 md:py-16 md:px-8">
