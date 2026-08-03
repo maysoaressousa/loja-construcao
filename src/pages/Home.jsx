@@ -23,7 +23,7 @@ export default function Home() {
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
   // 2. Agrupe os banners em um array
-  const banners = [banner1, banner2, banner3, banner4];
+  const banners = [banner1, banner2, banner3, banner4, banner5];
   
   // Estado para controlar qual banner está ativo
   const [currentSlide, setCurrentSlide] = useState(0);
