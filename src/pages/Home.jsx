@@ -11,6 +11,7 @@ import banner1 from '../assets/banner-1.png';
 import banner2 from '../assets/banner-2.png';
 import banner3 from '../assets/banner-3.png';
 import banner4 from '../assets/banner-4.png';
+import banner5 from '../assets/banner-5.png';
 import instagram1 from '../assets/instagram-1.jpg';
 import instagram2 from '../assets/instagram-2.jpg';
 import instagram3 from '../assets/instagram3.jpg';
