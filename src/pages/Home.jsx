@@ -11,7 +11,7 @@ import banner1 from '../assets/banner-1.png';
 import banner2 from '../assets/banner-2.png';
 import banner3 from '../assets/banner-3.png';
 import banner4 from '../assets/banner-4.png';
-import banner5 from '../assets/banner-5.png';
+//import banner5 from '../assets/banner-5.png';
 import instagram1 from '../assets/instagram-1.jpg';
 import instagram2 from '../assets/instagram-2.jpg';
 import instagram3 from '../assets/instagram3.jpg';
@@ -23,7 +23,7 @@ export default function Home() {
   const whatsappUrl = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent("Olá! Estou na página inicial do site e gostaria de fazer um orçamento.")}`;
 
   // 2. Agrupe os banners em um array
-  const banners = [banner1, banner2, banner3, banner4, banner5];
+  const banners = [banner1, banner2, banner3, banner4,];
   
   // Estado para controlar qual banner está ativo
   const [currentSlide, setCurrentSlide] = useState(0);
