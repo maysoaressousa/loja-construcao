@@ -41,7 +41,7 @@ export default function Footer() {
             Feche seu orçamento pelo WhatsApp e retire direto no nosso balcão ou envie um <strong>Uber Flash / Moto</strong> para buscar.
           </p>
           <p className="text-xs text-amber-400 font-medium">
-            * Não possuímos frota própria para entregas.
+            Entrega entrega para as proximidades da loja. Verificar com o vendedor.
           </p>
         </div>
 
@@ -59,8 +59,8 @@ export default function Footer() {
           <div className="flex items-start space-x-2">
             <FaClock className="text-amber-500 mt-1 flex-shrink-0" />
             <div>
-              <p>Seg a Sex: 07:30 às 18:30</p>
-              <p>Sábado: 08:00 às 12:00</p>
+              <p>Seg a Sex: 07:00 às 17:30</p>
+              <p>Sábado: 07:00 às 14:00</p>
               <a href="mailto:r3construecomm@gmail.com" className="hover:text-white transition-colors">
                 r3construecomm@gmail.com
               </a>
