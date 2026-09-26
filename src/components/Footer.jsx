@@ -41,7 +41,7 @@ export default function Footer() {
             Feche seu orçamento pelo WhatsApp e retire direto no nosso balcão ou envie um <strong>Uber Flash / Moto</strong> para buscar.
           </p>
           <p className="text-xs text-amber-400 font-medium">
-            Entrega entrega para as proximidades da loja. Verificar com o vendedor.
+            Entrega para as proximidades da loja. Verificar com o vendedor.
           </p>
         </div>
 
